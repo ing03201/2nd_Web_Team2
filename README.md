@@ -2,7 +2,7 @@
 
 # 전체 디렉터리 구조
 
-'''
+<pre>
 Root_Directory
 |---app 
 |----|---config 
@@ -33,4 +33,4 @@ Root_Directory
 |- app.js 
 |- package.json 
 |- package-lock.json
-'''
+</pre>
