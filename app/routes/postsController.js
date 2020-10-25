@@ -25,8 +25,34 @@ exports.getList = (req, res) => {
     });
 };
 
-/** * 글 입력 - 프로세스 * ip 찾기 - https://wedul.site/520 * * @param req * @param res */ exports.insertProcess = (req, res) => { let item = { 'name': req.body.name, 'email': req.body.email, 'password': req.body.password, 'subject': req.body.subject, 'content': req.body.content, 'ip': req.headers['x-forwarded-for'] || req.connection.remoteAddress, 'tags': req.body.tags }; postsModel.insertData(item, (result) => { if (result) { // console.log(result); if (result.affectedRows === 1) { res.redirect('/posts'); } else { res.redirect('/posts/new'); } } }); }; /** * 글 읽기 * * @param req * @param res */ exports.getView = (req, res) => { let id = req.params.id; postsModel.getView(id, (result) => { if (result) { // let md = new MarkdownIt(); result.content = MarkdownIt.render(result.content); res.render('posts/view', { title: result.subject, post: result }); } }); };
-
-출처: https://thisblogbusy.tistory.com/entry/Creating-a-bulletin-board-using-NodeJS-EXPRESS-MySQL-3?category=900700 [하루 한가지 배우기]
+// 글 작성 - 폼 
+exports.getPostForm = (req, res) => {
+    res.render('posts/writeForm', {
+        'title': '글 작성하기' 
+    }); 
+};
+// 글 입력 - 프로세스 // ip 찾기 - https://wedul.site/520
+exports.insertProcess = (req, res) => {
+    let item = {
+        'name': req.body.name, 
+        'email': req.body.email, 
+        'password': req.body.password, 
+        'subject': req.body.subject, 
+        'content': req.body.content, 
+        'ip': req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+        'tags': req.body.tags 
+    }; 
+    postsModel.insertData(item, (result) => { 
+        if (result) {
+        // console.log(result); 
+            if (result.affectedRows === 1) {
+                res.redirect('/posts'); 
+            } else {
+                res.redirect('/posts/new'); 
+            } 
+        } 
+    }
+    ); 
+};
 
 
