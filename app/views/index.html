@@ -51,9 +51,13 @@
         <div id="collapseMyInfo" class="collapse" aria-labelledby="headingMyInfo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 rounded" style="text-align: center;">
             <h6 class="collapse-header">MY INFO</h6>
+
+
+            <td th:text="${data.C_name}"></td>  
+
+
             <img src="https://cf-fpi.everytime.kr/0.png" class="picture">
             <p class="my-info-nickname">숭실김성용</p>
-            <p class="collapse-item">김성용</p>
             <p class="collapse-item">jhsy0507</p>
           </div>
         </div>
@@ -309,48 +313,70 @@
                   <tbody>
                     <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
                       onMouseOut=" window.status = '' ">
-                      <td>토익 스터디</td>
-                      <td>함께 토익 공부 하실분 구해요~~</td>
-                      <td>120</td>
-                      <td>5</td>
-                      <td>2020/04/25</td>
-                      <td>스터디, 토익</td>
+                      <td th:text="${data.C_name}"></td>  
+
+                      <td th:text="${data.C_intro}"></td>
+
+                      <td th:text="${data.C_view}"></td>
+
+                      <td th:text="${data.C_mem}"></td>
+                      <td th:text="${data.C_date}"></td>
+                      <td th:text="${data.C_kategorie}"></td>
+                      <!-- data.C_name : 모임 이름
+                          data.C_intro : 간단 소개
+                          data.C_view : 조회 수
+                          data.C_mem : 회원 수
+                          data.C_date : 게시일
+                          data.C_kategorie : 카테고리
+                        -->
                     </tr>
                     <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
                       onMouseOut=" window.status = '' ">
-                      <td>술 동아리</td>
-                      <td>음주하면서 친목을 다져요!</td>
-                      <td>230</td>
-                      <td>20</td>
-                      <td>2020/09/25</td>
-                      <td>친목, 음주</td>
+                      <td th:text="${data.C_name}"></td>  
+
+                      <td th:text="${data.C_intro}"></td>
+
+                      <td th:text="${data.C_view}"></td>
+
+                      <td th:text="${data.C_mem}"></td>
+                      <td th:text="${data.C_date}"></td>
+                      <td th:text="${data.C_category}"></td>
                     </tr>
                     <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
                       onMouseOut=" window.status = '' ">
-                      <td>CCS</td>
-                      <td>숭실대학교 중앙 축구 동아리</td>
-                      <td>560</td>
-                      <td>12</td>
-                      <td>2020/02/05</td>
-                      <td>축구, 스포츠</td>
+                      <td th:text="${data.C_name}"></td>  
+
+                      <td th:text="${data.C_intro}"></td>
+
+                      <td th:text="${data.C_view}"></td>
+
+                      <td th:text="${data.C_mem}"></td>
+                      <td th:text="${data.C_date}"></td>
+                      <td th:text="${data.C_category}"></td>
                     </tr>
                     <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
                       onMouseOut=" window.status = '' ">
-                      <td>Jazzle</td>
-                      <td>숭실대 여자 댄스 동아리</td>
-                      <td>513254</td>
-                      <td>62</td>
-                      <td>2020/03/15</td>
-                      <td>댄스</td>
+                      <td th:text="${data.C_name}"></td>  
+
+                      <td th:text="${data.C_intro}"></td>
+
+                      <td th:text="${data.C_view}"></td>
+
+                      <td th:text="${data.C_mem}"></td>
+                      <td th:text="${data.C_date}"></td>
+                      <td th:text="${data.C_category}"></td>
                     </tr>
                     <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
                       onMouseOut=" window.status = '' ">
-                      <td>코딩 스터디</td>
-                      <td>C, C++, JAVA, Python 함께 공부 하실분</td>
-                      <td>132</td>
-                      <td>5</td>
-                      <td>2020/04/11</td>
-                      <td>스터디, 코딩</td>
+                      <td th:text="${data.C_name}"></td>  
+
+                      <td th:text="${data.C_intro}"></td>
+
+                      <td th:text="${data.C_view}"></td>
+
+                      <td th:text="${data.C_mem}"></td>
+                      <td th:text="${data.C_date}"></td>
+                      <td th:text="${data.C_category}"></td>
                     </tr>
                     <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
                       onMouseOut=" window.status = '' ">
