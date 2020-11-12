@@ -5,6 +5,55 @@ const mysqlConn = mysqlConnObj.init();
 const bcrypt = require('bcrypt'); 
 const saltRound = 10; 
 /**
+ * 카테고리 리스트
+ * 
+ * *cb : Callback function. After completing input, it returns to the controller 
+ * 
+ * @param cb
+ */
+exports.getCategorylist = (cb) => {
+    /**
+     * todo : 페이지 처리
+     * @type {string}
+     */
+    let sql = 'SELECT * FROM posts ORDER BY id DESC LIMIT 10';
+    mysqlConn.query(sql, (err, results, fields) => {
+        if(err){
+            console.error('Error code :' + err.code);
+            console.error('Error Message :' + err.message);
+
+            throw new Error(err);
+        } else {
+            cb(JSON.parse(JSON.stringify(results)));
+        }
+    });
+};
+
+/**
+ * 카테고리 보기
+ * 
+ * 하나의 결과값만 리턴 할 경우 자체가 JSON 형식이라 따로 JSON.parse 안해줘도 됨
+ * 
+ * id : 카테고리 번호
+ * cd : 콜백 함수
+ * 
+ * @param id
+ * @param cb 
+ */
+exports.getCategoryView = (id, cb) => {
+    let sql = 'SELECT `id`, `name`, inet_ntoa(`ip`) AS `ip` FROM posts WHERE id=? LIMIT 1';
+    mysqlConn.query(sql, [id], (err,results,fields) => {
+        if(err) {
+            console.error('Error code :' + err.code);
+            console.error('Error Message :' + err.message);
+
+            throw new Error(err);
+        } else {
+            cb(results[0]);
+        }
+    });
+};
+/**
  * 게시글 리스트
  * 
  * *cb : Callback function. After completing input, it returns to the controller 
