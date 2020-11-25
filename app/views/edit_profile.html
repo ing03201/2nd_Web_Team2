@@ -18,9 +18,21 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
- <!-- Custom styles for this page -->
- <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <!-- Custom styles for this page -->
+  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+  <script>
+    function myAdd() {
+      var tab=document.all.mytable;
+      var row=tab.insertRow();
+      var col=row.insertCell();
+      var inp=document.createElement("input");
+      inp.type="text";
+      inp.NAME="이름"; // 대문자로 주세요.
+      inp.setAttribute("onclick","alert(this.name)"); // 테스트를 위해서 추가해 본 겁니다.
+      col.innerHTML=inp.outerHTML;
+    }
+    </script>
 </head>
 
 <body id="page-top">
@@ -51,11 +63,6 @@
         <div id="collapseMyInfo" class="collapse" aria-labelledby="headingMyInfo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 rounded" style="text-align: center;">
             <h6 class="collapse-header">MY INFO</h6>
-
-
-            <td th:text="${data.C_name}"></td>  
-
-
             <img src="https://cf-fpi.everytime.kr/0.png" class="sidebar-card-illustration mb-2">
             <p class="collapse-item">숭실김성용</p>
             <p class="collapse-item">jhsy0507</p>
@@ -167,14 +174,17 @@
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
               </a>
               <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                      aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="button">
                         <i class="fas fa-search fa-sm"></i>
@@ -186,17 +196,19 @@
             </li>
 
             <li class="nav-item dropdown no-arrow">
-                <h6 class="nav-link m-0 font-weight-bold text-primary">모두 여기로 모여라!</h6>
+              <h6 class="nav-link m-0 font-weight-bold text-primary">모두 여기로 모여라!</h6>
             </li>
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">3+</span>
               </a>
               <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
                   알림
                 </h6>
@@ -245,7 +257,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">김성용</span>
-                <img class="img-profile rounded-circle" src="https://cf-fpi.everytime.kr/0.png">
+                <img class="img-profile rounded-circle" src="https://cf-fpi.everytime.kr/0.png" style=>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -278,124 +290,158 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-         
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">모임 찾기</h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"
-                  style="overflow:hidden;">
-                  <thead>
-                    <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
-                      onMouseOut=" window.status = '' ">
-                      <th>모임 이름</th>
-                      <th>간단 소개</th>
-                      <th>조회 수</th>
-                      <th>회원 수</th>
-                      <th>게시일</th>
-                      <th>카테고리</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
-                      onMouseOut=" window.status = '' ">
-                      <th>모임 이름</th>
-                      <th>간단 소개</th>
-                      <th>조회 수</th>
-                      <th>회원 수</th>
-                      <th>게시일</th>
-                      <th>카테고리</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
-                      onMouseOut=" window.status = '' ">
-                      <td th:text="${data.C_name}"></td>  
+          <div class="card ">
+            <div class="card border-left-primary shadow mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">내 정보</h6>
+              </div>
 
-                      <td th:text="${data.C_intro}"></td>
+              <div class="card-body">
+                <div class="card-body">
 
-                      <td th:text="${data.C_view}"></td>
+                  <div class="row align-items-center">
+                    <img src="https://cf-fpi.everytime.kr/0.png " class="mb-2" style="height: 12rem;width: 12rem;">
+                    <div class="col mr-2">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">이름
+                          </div>
+                          <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                              <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="이름"
+                                  aria-label="Name" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                  <button class="btn btn-primary" type="button">
+                                    <i class="fas text-white fa-sm">확인</i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">별명
+                          </div>
+                          <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                              <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="별명"
+                                  aria-label="NickName" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                  <button class="btn btn-primary" type="button">
+                                    <i class="fas text-white fa-sm">확인</i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">ID
+                          </div>
+                          <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                              <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">jhsy0507@gmail.com</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-                      <td th:text="${data.C_mem}"></td>
-                      <td th:text="${data.C_date}"></td>
-                      <td th:text="${data.C_kategorie}"></td>
-                      <!-- data.C_name : 모임 이름
-                          data.C_intro : 간단 소개
-                          data.C_view : 조회 수
-                          data.C_mem : 회원 수
-                          data.C_date : 게시일
-                          data.C_kategorie : 카테고리
-                        -->
-                    </tr>
-                    <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
-                      onMouseOut=" window.status = '' ">
-                      <td th:text="${data.C_name}"></td>  
-
-                      <td th:text="${data.C_intro}"></td>
-
-                      <td th:text="${data.C_view}"></td>
-
-                      <td th:text="${data.C_mem}"></td>
-                      <td th:text="${data.C_date}"></td>
-                      <td th:text="${data.C_category}"></td>
-                    </tr>
-                    <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
-                      onMouseOut=" window.status = '' ">
-                      <td th:text="${data.C_name}"></td>  
-
-                      <td th:text="${data.C_intro}"></td>
-
-                      <td th:text="${data.C_view}"></td>
-
-                      <td th:text="${data.C_mem}"></td>
-                      <td th:text="${data.C_date}"></td>
-                      <td th:text="${data.C_category}"></td>
-                    </tr>
-                    <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
-                      onMouseOut=" window.status = '' ">
-                      <td th:text="${data.C_name}"></td>  
-
-                      <td th:text="${data.C_intro}"></td>
-
-                      <td th:text="${data.C_view}"></td>
-
-                      <td th:text="${data.C_mem}"></td>
-                      <td th:text="${data.C_date}"></td>
-                      <td th:text="${data.C_category}"></td>
-                    </tr>
-                    <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
-                      onMouseOut=" window.status = '' ">
-                      <td th:text="${data.C_name}"></td>  
-
-                      <td th:text="${data.C_intro}"></td>
-
-                      <td th:text="${data.C_view}"></td>
-
-                      <td th:text="${data.C_mem}"></td>
-                      <td th:text="${data.C_date}"></td>
-                      <td th:text="${data.C_category}"></td>
-                    </tr>
-                    <tr style="cursor:pointer;" onClick=" location.href='#' " onMouseOver=" indow.status = '#' "
-                      onMouseOut=" window.status = '' ">
-                      <td>맛집 투어</td>
-                      <td>서울 곳곳 맛집 투어 동아리!</td>
-                      <td>1202</td>
-                      <td>342</td>
-                      <td>2020/01/02</td>
-                      <td>친목, 맛집, 먹방</td>
-                    </tr>
-                  </tbody>
-                </table>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+
+
+            <div class="card border-left-primary shadow mb-4">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">관심 분야</h6>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+
+                    <div class="col-auto mb-2">
+                      <div class="card bg-primary text-white shadow">
+                        <div class="card-body">
+                          축구
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto mb-2">
+                      <div class="card bg-primary text-white shadow">
+                        <div class="card-body">
+                          축구
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto mb-2">
+                      <div class="card bg-primary text-white shadow">
+                        <div class="card-body">
+                          축구
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="card-body">
+                  <div class="row">
+
+                    <div class="col-auto">
+                      <div class="input-group">
+                        <input type="text" class="form-control bg-light border-0 small" placeholder="관심 분야"
+                          aria-label="Interests" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-primary" type="button">
+                            <i class="fas text-white fa-sm">추가</i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-left-primary shadow mb-4">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">간단 소개</h6>
+                </div>
+                <div class="card-body">
+
+                  <div class="input-group">
+                    <textarea class="form-control col-sm-5"rows="8" placeholder="간단 소개" aria-label="Simple_Intro"
+                      aria-describedby="basic-addon2"></textarea>
+                    <div class="input-group-append">
+                      <button class="btn btn-primary"rows="8" type="button">
+                            <i class="fas text-white fa-sm">확인</i>
+                          </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+          <div>
+            <a href="./profile.html" class="btn btn-primary btn-icon-split mb-4" style="float: right;">
+              <span class="text">회원 정보 수정</span>
+            </a>
           </div>
 
+          <!-- /.container-fluid -->
         </div>
-        <!-- /.container-fluid -->
-
       </div>
       <!-- End of Main Content -->
 
@@ -436,7 +482,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">정말 나가시곘습니까?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">정말 나가시겠습니까?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -470,5 +516,3 @@
 </body>
 
 </html>
-
-
