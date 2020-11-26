@@ -1,0 +1,287 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description', content='')
+  meta(name='author', content='')
+  title Main
+  // Custom fonts for this template
+  link(href='vendor/fontawesome-free/css/all.min.css', rel='stylesheet', type='text/css')
+  link(href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i', rel='stylesheet')
+  // Custom styles for this template
+  link(href='css/sb-admin-2.min.css', rel='stylesheet')
+  // Custom styles for this page
+  link(href='vendor/datatables/dataTables.bootstrap4.min.css', rel='stylesheet')
+// Page Wrapper
+#wrapper
+  // Sidebar
+  ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion
+    // Sidebar - Brand
+    a.sidebar-brand.d-flex.align-items-center.justify-content-center(href='index.html')
+      .sidebar-brand-icon.rotate-n-15
+        i.fas.fa-laugh-wink
+      .sidebar-brand-text.mx-3
+    // Divider
+    hr.sidebar-divider.my-0
+    li.nav-item
+      a.nav-link.collapsed(href='#', data-toggle='collapse', data-target='#collapseMyInfo', aria-expanded='true', aria-controls='collapseMyInfo')
+        span &#xB0B4; &#xC815;&#xBCF4;
+      #collapseMyInfo.collapse(aria-labelledby='headingMyInfo', data-parent='#accordionSidebar')
+        .bg-white.py-2.rounded(style='text-align: center;')
+          h6.collapse-header MY INFO
+          td(th:text='${data.C_name}')
+          img.sidebar-card-illustration.mb-2(src='https://cf-fpi.everytime.kr/0.png')
+          p.collapse-item &#xC22D;&#xC2E4;&#xAE40;&#xC131;&#xC6A9;
+          p.collapse-item jhsy0507
+    // Nav Item - Dashboard
+    // Divider
+    hr.sidebar-divider
+    // Heading
+    .sidebar-heading
+      | &#xCE74;&#xD14C;&#xACE0;&#xB9AC;
+    // Nav Item - Pages Collapse Menu
+    li.nav-item
+      a.nav-link.collapsed(href='#', data-toggle='collapse', data-target='#collapseCircle', aria-expanded='true', aria-controls='collapseCircle')
+        span &#xB3D9;&#xC544;&#xB9AC;
+      #collapseCircle.collapse(aria-labelledby='headingCircle', data-parent='#accordionSidebar')
+        .bg-white.py-2.collapse-inner.rounded
+          h6.collapse-header CIRCLE
+          a.collapse-item(href='#') &#xD56D;&#xBAA9;1
+          a.collapse-item(href='#') &#xD56D;&#xBAA9;2
+    // Nav Item - Utilities Collapse Menu
+    li.nav-item
+      a.nav-link.collapsed(href='#', data-toggle='collapse', data-target='#collapseStudy', aria-expanded='true', aria-controls='collapseStudy')
+        span &#xC2A4;&#xD130;&#xB514;
+      #collapseStudy.collapse(aria-labelledby='headingUtilities', data-parent='#accordionSidebar')
+        .bg-white.py-2.collapse-inner.rounded
+          h6.collapse-header STUDY
+          a.collapse-item(href='#') &#xD56D;&#xBAA9;1
+          a.collapse-item(href='#') &#xD56D;&#xBAA9;2
+    li.nav-item
+      a.nav-link.collapsed(href='#', data-toggle='collapse', data-target='#collapseMeeting', aria-expanded='true', aria-controls='collapseMeeting')
+        span &#xBBF8;&#xD305;
+      #collapseMeeting.collapse(aria-labelledby='headingUtilities', data-parent='#accordionSidebar')
+        .bg-white.py-2.collapse-inner.rounded
+          h6.collapse-header MEETING
+          a.collapse-item(href='#') &#xD56D;&#xBAA9;1
+          a.collapse-item(href='#') &#xD56D;&#xBAA9;2
+    li.nav-item.active
+      a.nav-link(href='index.html')
+        i.fas.fa-fw.fa-tachometer-alt
+        span &#xBA54;&#xC778;
+    // Divider
+    hr.sidebar-divider.d-none.d-md-block
+    // Sidebar Toggler (Sidebar)
+    .text-center.d-none.d-md-inline
+      button#sidebarToggle.rounded-circle.border-0
+  // End of Sidebar
+  // Content Wrapper
+  #content-wrapper.d-flex.flex-column
+    // Main Content
+    #content
+      // Topbar
+      nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+        // Sidebar Toggle (Topbar)
+        button#sidebarToggleTop.btn.btn-link.d-md-none.rounded-circle.mr-3
+          i.fa.fa-bars
+        // Topbar Search
+        form.d-none.d-sm-inline-block.form-inline.mr-auto.ml-md-3.my-2.my-md-0.mw-100.navbar-search
+          .input-group
+            input.form-control.bg-light.border-0.small(type='text', placeholder='Search for...', aria-label='Search', aria-describedby='basic-addon2')
+            .input-group-append
+              button.btn.btn-primary(type='button')
+                i.fas.fa-search.fa-sm
+        // Topbar Navbar
+        ul.navbar-nav.ml-auto
+          // Nav Item - Search Dropdown (Visible Only XS)
+          li.nav-item.dropdown.no-arrow.d-sm-none
+            a#searchDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              i.fas.fa-search.fa-fw
+            // Dropdown - Messages
+            .dropdown-menu.dropdown-menu-right.p-3.shadow.animated--grow-in(aria-labelledby='searchDropdown')
+              form.form-inline.mr-auto.w-100.navbar-search
+                .input-group
+                  input.form-control.bg-light.border-0.small(type='text', placeholder='Search for...', aria-label='Search', aria-describedby='basic-addon2')
+                  .input-group-append
+                    button.btn.btn-primary(type='button')
+                      i.fas.fa-search.fa-sm
+          li.nav-item.dropdown.no-arrow
+            h6.nav-link.m-0.font-weight-bold.text-primary &#xBAA8;&#xB450; &#xC5EC;&#xAE30;&#xB85C; &#xBAA8;&#xC5EC;&#xB77C;!
+          // Nav Item - Alerts
+          li.nav-item.dropdown.no-arrow.mx-1
+            a#alertsDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              i.fas.fa-bell.fa-fw
+              // Counter - Alerts
+              span.badge.badge-danger.badge-counter 3+
+            // Dropdown - Alerts
+            .dropdown-list.dropdown-menu.dropdown-menu-right.shadow.animated--grow-in(aria-labelledby='alertsDropdown')
+              h6.dropdown-header
+                | &#xC54C;&#xB9BC;
+              a.dropdown-item.d-flex.align-items-center(href='#')
+                .mr-3
+                  .icon-circle.bg-primary
+                    i.fas.fa-file-alt.text-white
+                div
+                  .small.text-gray-500 December 12, 2019
+                  span.font-weight-bold A new monthly report is ready to download!
+              a.dropdown-item.d-flex.align-items-center(href='#')
+                .mr-3
+                  .icon-circle.bg-success
+                    i.fas.fa-donate.text-white
+                div
+                  .small.text-gray-500 December 7, 2019
+                  |                     $290.29 has been deposited into your account!
+              a.dropdown-item.d-flex.align-items-center(href='#')
+                .mr-3
+                  .icon-circle.bg-warning
+                    i.fas.fa-exclamation-triangle.text-white
+                div
+                  .small.text-gray-500 December 2, 2019
+                  |                     Spending Alert: We&apos;ve noticed unusually high spending for your account.
+              a.dropdown-item.text-center.small.text-gray-500(href='#') &#xB354; &#xBCF4;&#xAE30;
+          .topbar-divider.d-none.d-sm-block
+          // Nav Item - User Information
+          li.nav-item.dropdown.no-arrow
+            a#userDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              span.mr-2.d-none.d-lg-inline.text-gray-600.small &#xAE40;&#xC131;&#xC6A9;
+              img.img-profile.rounded-circle(src='https://cf-fpi.everytime.kr/0.png')
+            // Dropdown - User Information
+            .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in(aria-labelledby='userDropdown')
+              a.dropdown-item(href='./profile.html')
+                i.fas.fa-user.fa-sm.fa-fw.mr-2.text-gray-400
+                |                   Profile
+              a.dropdown-item(href='#')
+                i.fas.fa-cogs.fa-sm.fa-fw.mr-2.text-gray-400
+                |                   Settings
+              a.dropdown-item(href='#')
+                i.fas.fa-list.fa-sm.fa-fw.mr-2.text-gray-400
+                |                   Activity Log
+              .dropdown-divider
+              a.dropdown-item(href='#', data-toggle='modal', data-target='#logoutModal')
+                i.fas.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
+                |                   Logout
+      // End of Topbar
+      // Begin Page Content
+      .container-fluid
+        // Page Heading
+        // DataTales Example
+        .card.shadow.mb-4
+          .card-header.py-3
+            h6.m-0.font-weight-bold.text-primary &#xBAA8;&#xC784; &#xCC3E;&#xAE30;
+          .card-body
+            .table-responsive
+              table#dataTable.table.table-bordered(width='100%', cellspacing='0', style='overflow:hidden;')
+                thead
+                  tr(style='cursor:pointer;', onclick=" location.href='#' ", onmouseover=" indow.status = '#' ", onmouseout=" window.status = '' ")
+                    th &#xBAA8;&#xC784; &#xC774;&#xB984;
+                    th &#xAC04;&#xB2E8; &#xC18C;&#xAC1C;
+                    th &#xC870;&#xD68C; &#xC218;
+                    th &#xD68C;&#xC6D0; &#xC218;
+                    th &#xAC8C;&#xC2DC;&#xC77C;
+                    th &#xCE74;&#xD14C;&#xACE0;&#xB9AC;
+                tfoot
+                  tr(style='cursor:pointer;', onclick=" location.href='#' ", onmouseover=" indow.status = '#' ", onmouseout=" window.status = '' ")
+                    th &#xBAA8;&#xC784; &#xC774;&#xB984;
+                    th &#xAC04;&#xB2E8; &#xC18C;&#xAC1C;
+                    th &#xC870;&#xD68C; &#xC218;
+                    th &#xD68C;&#xC6D0; &#xC218;
+                    th &#xAC8C;&#xC2DC;&#xC77C;
+                    th &#xCE74;&#xD14C;&#xACE0;&#xB9AC;
+                tbody
+                  tr(style='cursor:pointer;', onclick=" location.href='#' ", onmouseover=" indow.status = '#' ", onmouseout=" window.status = '' ")
+                    td(th:text='${data.C_name}')
+                    td(th:text='${data.C_intro}')
+                    td(th:text='${data.C_view}')
+                    td(th:text='${data.C_mem}')
+                    td(th:text='${data.C_date}')
+                    td(th:text='${data.C_kategorie}')
+                    //
+                      data.C_name : 모임 이름
+                      data.C_intro : 간단 소개
+                      data.C_view : 조회 수
+                      data.C_mem : 회원 수
+                      data.C_date : 게시일
+                      data.C_kategorie : 카테고리
+                  tr(style='cursor:pointer;', onclick=" location.href='#' ", onmouseover=" indow.status = '#' ", onmouseout=" window.status = '' ")
+                    td(th:text='${data.C_name}')
+                    td(th:text='${data.C_intro}')
+                    td(th:text='${data.C_view}')
+                    td(th:text='${data.C_mem}')
+                    td(th:text='${data.C_date}')
+                    td(th:text='${data.C_category}')
+                  tr(style='cursor:pointer;', onclick=" location.href='#' ", onmouseover=" indow.status = '#' ", onmouseout=" window.status = '' ")
+                    td(th:text='${data.C_name}')
+                    td(th:text='${data.C_intro}')
+                    td(th:text='${data.C_view}')
+                    td(th:text='${data.C_mem}')
+                    td(th:text='${data.C_date}')
+                    td(th:text='${data.C_category}')
+                  tr(style='cursor:pointer;', onclick=" location.href='#' ", onmouseover=" indow.status = '#' ", onmouseout=" window.status = '' ")
+                    td(th:text='${data.C_name}')
+                    td(th:text='${data.C_intro}')
+                    td(th:text='${data.C_view}')
+                    td(th:text='${data.C_mem}')
+                    td(th:text='${data.C_date}')
+                    td(th:text='${data.C_category}')
+                  tr(style='cursor:pointer;', onclick=" location.href='#' ", onmouseover=" indow.status = '#' ", onmouseout=" window.status = '' ")
+                    td(th:text='${data.C_name}')
+                    td(th:text='${data.C_intro}')
+                    td(th:text='${data.C_view}')
+                    td(th:text='${data.C_mem}')
+                    td(th:text='${data.C_date}')
+                    td(th:text='${data.C_category}')
+                  tr(style='cursor:pointer;', onclick=" location.href='#' ", onmouseover=" indow.status = '#' ", onmouseout=" window.status = '' ")
+                    td &#xB9DB;&#xC9D1; &#xD22C;&#xC5B4;
+                    td &#xC11C;&#xC6B8; &#xACF3;&#xACF3; &#xB9DB;&#xC9D1; &#xD22C;&#xC5B4; &#xB3D9;&#xC544;&#xB9AC;!
+                    td 1202
+                    td 342
+                    td 2020/01/02
+                    td &#xCE5C;&#xBAA9;, &#xB9DB;&#xC9D1;, &#xBA39;&#xBC29;
+      // /.container-fluid
+    // End of Main Content
+    // Footer
+    footer.sticky-footer.bg-white
+      .container.my-auto
+        .copyright.text-center.my-auto
+          a(href='#') &#xC774;&#xC6A9;&#xC57D;&#xAD00; 
+          span |
+          a(href='#') &#xAC1C;&#xC778;&#xC815;&#xBCF4;&#xCC98;&#xB9AC;&#xBC29;&#xCE68; 
+          span |
+          a(href='#') &#xCEE4;&#xBBA4;&#xB2C8;&#xD2F0;&#xC774;&#xC6A9;&#xADDC;&#xCE59; 
+          span |
+          a(href='#') &#xACF5;&#xC9C0;&#xC0AC;&#xD56D; 
+          span |
+          a(href='#') &#xBB38;&#xC758;&#xD558;&#xAE30; 
+          br
+          span Copyright &copy; &#xAE40;&#xAC00;&#xB124;
+    // End of Footer
+  // End of Content Wrapper
+// End of Page Wrapper
+// Scroll to Top Button
+a.scroll-to-top.rounded(href='#page-top')
+  i.fas.fa-angle-up
+// Logout Modal
+#logoutModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title &#xC815;&#xB9D0; &#xB098;&#xAC00;&#xC2DC;&#xACD8;&#xC2B5;&#xB2C8;&#xAE4C;?
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body &#xBAA8;&#xB4E0; &#xC791;&#xC5C5;&#xC744; &#xB9C8;&#xCCE4;&#xC73C;&#xBA74; &#xC544;&#xB798; &#xB85C;&#xADF8;&#xC544;&#xC6C3; &#xBC84;&#xD2BC;&#xC744; &#xB204;&#xB974;&#xC2DC;&#xC624;.
+      .modal-footer
+        button.btn.btn-secondary(type='button', data-dismiss='modal') &#xCDE8;&#xC18C;
+        a.btn.btn-primary(href='login.html') &#xB85C;&#xADF8;&#xC544;&#xC6C3;
+// Bootstrap core JavaScript
+script(src='vendor/jquery/jquery.min.js')
+script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
+// Core plugin JavaScript
+script(src='vendor/jquery-easing/jquery.easing.min.js')
+// Custom scripts for all pages
+script(src='js/sb-admin-2.min.js')
+// Page level plugins
+script(src='vendor/datatables/jquery.dataTables.min.js')
+script(src='vendor/datatables/dataTables.bootstrap4.min.js')
+// Page level custom scripts
+script(src='js/demo/datatables-demo.js')
