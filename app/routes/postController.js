@@ -14,7 +14,6 @@ exports.getList = (req, res) => {
     postsModel.getList((result) => {
         if(result) {
             //console.log(result);
-
             res.render('post/list', {
                 title: '게시판 리스트',
                 posts: result
