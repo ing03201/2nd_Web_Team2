@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
 
 
 /* post로 넘어온 값은 req.body 로 받을 수 있다. get 으로 넘어온 값은 req.query 로 받을 수 있다. */ 
-router.post('/signUp', 
+router.post('/register', 
     function (req, res, next) {
         const user = {
             'userid': req.body.user.userid, 

@@ -1,12 +1,11 @@
 const mysql = require("mysql"); // mysql 연결 
 const mysqlConnection = { 
     init: function () { return mysql.createConnection({
-        host: process.env.MYSQL_HOST,
-        port: process.env.MYSQL_PORT, 
-        user: process.env.MYSQL_USER, 
-        password: process.env.MYSQL_PASS, 
-        database: process.env.MYSQL_DB, 
-        charset: process.env.MYSQL_CHARSET // Emoji - utf8mb4
+        host: 'localhost',
+        user: 'root', 
+        password : 'password',
+        database: 'study_db', 
+        charset: 'utf8mb4'
         }); 
     }, 
     open: function (conn) {

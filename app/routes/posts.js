@@ -3,7 +3,7 @@ const router = express.Router();
 const postsController = require('../controllers/postController');
 
 //list
-router.get('/new',postsController.getList);
+router.get('/post/list',postsController.getList);
 
 // New Post Form
 router.get('/new',postsController.getPostForm);
